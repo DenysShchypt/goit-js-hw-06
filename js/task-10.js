@@ -5,24 +5,26 @@ const elemt = {
   btnDestroy: document.querySelector("button[data-destroy]"),
   boxElement: document.querySelector("div#boxes"),
 };
-console.log(elemt.inputElement.value);
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
 }
 
-function handlerValueInput(evt) {
-  const amount = Number(evt.currentTarget.value);
+function handlerCreate(evt) {
+  const amount = Number(elemt.inputElement.value);
+
+  createBoxes(amount);
   function createBoxes(amount) {
     const numberDiv = document.createElement(`div`);
-    console.log(numberDiv);
+    for (let i = 0; i <= amount; i += 1) {}
     elemt.boxElement.insertAdjacentHTML("beforeend", numberDiv);
   }
-  elemt.btnCreate.addEventListener("click", createBoxes(amount));
 }
-elemt.inputElement.addEventListener("input", handlerValueInput);
 
+elemt.btnCreate.addEventListener("click", handlerCreate);
+console.log(elemt.boxElement);
 // const amoutInput = elemt.inputElement.value;
 // console.log(amoutInput);
 // function handlerValueInput(evt) {
