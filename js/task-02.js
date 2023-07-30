@@ -1,15 +1,15 @@
 const ingredients = ["Potatoes", "Mushrooms", "Garlic", "Tomatos", "Herbs", "Condiments"];
 
-const grandEl = document.querySelector(`ul#ingredients`);
+const ingredientsListEl = document.querySelector(`ul#ingredients`);
 
-function getLi(arry) {
-  const resolt = arry.map((arr) => {
-    const el = document.createElement("li");
-    el.textContent = arr;
-    el.classList.add("item");
-    return el;
+function renderItems(ingredients) {
+  const markup = ingredients.map((ingredient) => {
+    const itemElement = document.createElement("li");
+    itemElement.textContent = ingredient;
+    itemElement.classList.add("item");
+    return itemElement;
   });
-  grandEl.after(...resolt);
-};
+  ingredientsListEl.after(...markup);
+}
 
-getLi(ingredients);
+renderItems(ingredients);

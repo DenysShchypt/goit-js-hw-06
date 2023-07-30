@@ -1,7 +1,7 @@
-const elem = {
-  click: document.querySelector("button.change-color"),
-  valueColor: document.querySelector("span.color"),
-  color: document.querySelector("body"),
+const element = {
+  btn: document.querySelector("button.change-color"),
+  span: document.querySelector("span.color"),
+  body: document.querySelector("body"),
 };
 
 function getRandomHexColor() {
@@ -11,9 +11,8 @@ function getRandomHexColor() {
 }
 
 function handlerBodyColor() {
-  elem.color.style.backgroundColor = getRandomHexColor();
-  elem.color.style.backgroundColor.reset;
-  elem.valueColor.textContent = getRandomHexColor();
+  element.body.style.backgroundColor = getRandomHexColor();
+  element.span.textContent = getRandomHexColor();
 }
 
-elem.click.addEventListener("click", handlerBodyColor);
+element.btn.addEventListener("click", handlerBodyColor);

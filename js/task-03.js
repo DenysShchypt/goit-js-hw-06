@@ -13,10 +13,10 @@ const images = [
   },
 ];
 
-const grandEl = document.querySelector("ul.gallery");
+const imagestListEl = document.querySelector("ul.gallery");
 
-function getGallery(array) {
-  const resolt = array
+function renderGallery(array) {
+  const markup = array
     .map(
       ({ url, alt }) => ` <li class="item-gallery">
       <img src="${url}" alt="${alt}">
@@ -25,7 +25,7 @@ function getGallery(array) {
     )
     .join("");
 
-  grandEl.insertAdjacentHTML("beforeend", resolt);
+  imagestListEl.insertAdjacentHTML("beforeend", markup);
 }
 
-getGallery(images);
+renderGallery(images);

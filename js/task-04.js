@@ -1,17 +1,23 @@
-const button = document.querySelectorAll("div#counter button");
-
-const counterValue = document.querySelector("span#value");
-
-counterValue.textContent = 0;
-
-const newMax = () => {
-  counterValue.textContent = Number(counterValue.textContent) + 1;
+const elements = {
+  incrementButton: document.querySelector("[data-action='increment']"),
+  decrementButton: document.querySelector("[data-action='decrement']"),
+  counterValue: document.querySelector("span#value"),
 };
+elements.incrementButton.addEventListener("click", updateCounterValue);
+elements.decrementButton.addEventListener("click", updateCounterValue);
 
-const newMin = () => {
-  counterValue.textContent = Number(counterValue.textContent) - 1;
-};
+function updateCounterValue(evt) {
+  const currentBtnAction = evt.currentTarget.dataset.action;
+  let startValue = Number(elements.counterValue.textContent);
 
-button[1].addEventListener("click", newMax);
+  switch (currentBtnAction) {
+    case "increment":
+      startValue += 1;
+      break;
 
-button[0].addEventListener("click", newMin);
+    case "decrement":
+      startValue -= 1;
+      break;
+  }
+  elements.counterValue.textContent = startValue;
+}

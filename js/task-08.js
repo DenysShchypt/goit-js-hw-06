@@ -1,4 +1,4 @@
-const navElement = document.querySelector("form.login-form");
+const loginFormEl = document.querySelector("form.login-form");
 
 function handlerProcessForm(evt) {
   evt.preventDefault();
@@ -6,7 +6,7 @@ function handlerProcessForm(evt) {
   if (email.value === "" || password.value === "") {
     return alert(`Всі поля повинні бути заповнені`);
   }
-  const valueInput = {
+  const formData = {
     email: email.value,
     password: password.value,
   };
@@ -14,4 +14,4 @@ function handlerProcessForm(evt) {
   evt.currentTarget.reset();
 }
 
-navElement.addEventListener("submit", handlerProcessForm);
+loginFormEl.addEventListener("submit", handlerProcessForm);

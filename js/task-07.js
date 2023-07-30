@@ -1,8 +1,8 @@
-const eventInput = document.querySelector("input#font-size-control");
-const textAbra = document.querySelector("span#text");
+const inputEl = document.querySelector("input#font-size-control");
+const textEl = document.querySelector("span#text");
 
 function handlerInputSize() {
-  textAbra.style.fontSize = `${eventInput.value}px`;
+  textEl.style.fontSize = `${inputEl.value}px`;
 }
 
-eventInput.addEventListener("input", handlerInputSize);
+inputEl.addEventListener("input", handlerInputSize);
